@@ -19,7 +19,7 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-    
+
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
@@ -112,3 +112,28 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+
+// handling Query submit form
+document.getElementById('feedback-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var formData = new FormData(this);
+  fetch('https://script.google.com/macros/s/AKfycbwD1wCa34gEQu96biGGufSjD4YWwvPC63r9hFVCTNmFgAk0eabtcRJStoes8XU7Iq__Qw/exec', {
+    method: 'POST',
+    body: JSON.stringify(Object.fromEntries(formData.entries())),
+  })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data); // Response from the script (optional)
+
+      // Display success message
+      var successMessage = document.getElementById('success-message');
+      successMessage.style.display = 'block';
+
+      // You can optionally reset the form
+      document.getElementById('feedback-form').reset();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});
