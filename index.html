@@ -568,18 +568,18 @@
 
                 <li class="timeline-item">
                   <h4 class="h4 timeline-item-title">Qwitter App</h4>
-                  <span>January 2021 - April 2022 </span>
+                  <span>December 2021 - April 2022 </span>
                   <p class="timeline-text">
-                    - Qwitter is a Web-based platform for users to interact with blogs and perform some operations on it.  <br>
-                    - Implemented features like Users Admin page, CRUD on Blogs, various forms, User Authentication, blogs Feed etc. <br>
+                    - A Web-based platform designed for users to interact with blogs while performing multiple operations on it. <br> 
+                    - Implemented features like User Authentication, Blogs Feed, User Admin page, CRUD on Blogs & Database management. <br>
                   </p>
                 </li>
             
                 <li class="timeline-item">
                   <h4 class="h4 timeline-item-title">Magical Arena</h4>
-                  <span>November 2022 - November 2022  </span>
+                  <span>November 2022 - December 2022  </span>
                   <p class="timeline-text">
-                    - A turn-based combat simulation game for two players with distinct attributes to engage in a battle within an arena. <br>
+                    - A turn-based combat simulation game for two players with distinct attributes to engage in a battle within an arena.<br>
                     - Implemented Object oriented design, modules, Comprehensive unit tests and provided detailed documentation. <br>
                   </p>
                 </li>
@@ -602,11 +602,13 @@
 
             <ol class="timeline-list patents-list">
               <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Futurica </h4>
+                <h4 class="h4 timeline-item-title"> Smart Naturals </h4>
                 <span> July 2021 - January 2022  </span>
                 <p class="timeline-text">
-                  - yers with distinct attributes to engage in a battle within an arena. <br>
-                  - Implemented Object oriented design, modules, Comprehensive unit tests and provided detailed documentation. <br>
+                  - An ecommerce webapp, designed for users to do hassle free online shopping from the diverse range of products. <br>
+                  - Provides distinct features for both customers (shopping, tracking, payments) and sellers (product management, order fulfillment). <br>
+                  - Implemented features like user Authentication, product search, applicable promocodes & Cart checkout. <br>
+                  - Followed Object oriented design, modules, Comprehensive unit tests and provided detailed documentation. <br>
                 </p>
               </li>
             </ol>
@@ -639,31 +641,6 @@
           <div id="success-message" style="display: none; padding-top: 20px; color: white;">
             Form submitted successfully! Thank you for your feedback.
           </div>
-          
-          <script>
-            document.getElementById('feedback-form').addEventListener('submit', function (e) {
-              e.preventDefault();
-              var formData = new FormData(this);
-              fetch('https://script.google.com/macros/s/AKfycbwD1wCa34gEQu96biGGufSjD4YWwvPC63r9hFVCTNmFgAk0eabtcRJStoes8XU7Iq__Qw/exec', {
-                method: 'POST',
-                body: JSON.stringify(Object.fromEntries(formData.entries())),
-              })
-              .then(response => response.text())
-              .then(data => {
-                console.log(data); // Response from the script (optional)
-                
-                // Display success message
-                var successMessage = document.getElementById('success-message');
-                successMessage.style.display = 'block';
-                
-                // You can optionally reset the form
-                document.getElementById('feedback-form').reset();
-              })
-              .catch(error => {
-                console.error('Error:', error);
-              });
-            });
-          </script>
         </section>
         
       </article>
