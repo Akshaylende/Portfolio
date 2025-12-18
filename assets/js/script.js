@@ -118,7 +118,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
 document.getElementById('feedback-form').addEventListener('submit', function (e) {
   e.preventDefault();
   var formData = new FormData(this);
-  fetch('https://script.google.com/macros/s/AKfycbwD1wCa34gEQu96biGGufSjD4YWwvPC63r9hFVCTNmFgAk0eabtcRJStoes8XU7Iq__Qw/exec', {
+  console.log(JSON.stringify(Object.fromEntries(formData.entries())));
+  fetch('https://script.google.com/macros/s/AKfycbyfUugDF9mcvlZW4sG_BRMiauFvkSVDbEbtY9WtjRsZvggV8OjtJCbLOdwO8l1KTNY6dw/exec', {
     method: 'POST',
     body: JSON.stringify(Object.fromEntries(formData.entries())),
   })
