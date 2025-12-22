@@ -122,10 +122,13 @@ document.getElementById('feedback-form').addEventListener('submit', function (e)
   fetch('https://script.google.com/macros/s/AKfycbyfUugDF9mcvlZW4sG_BRMiauFvkSVDbEbtY9WtjRsZvggV8OjtJCbLOdwO8l1KTNY6dw/exec', {
     method: 'POST',
     body: JSON.stringify(Object.fromEntries(formData.entries())),
-  })
-    .then(response => response.text())
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    })
+    .then(response => response.json())
     .then(data => {
-      console.log(data); // Response from the script (optional)
+      // console.log(data); // Response from the script (optional)
 
       // Display success message
       var successMessage = document.getElementById('success-message');
